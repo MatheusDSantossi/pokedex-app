@@ -7,19 +7,32 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0] - 2025-06-17
+
 ### Added
 
-- Remoção da pasta .vscode do repositório (.gitignore ajustado)
+- Inicialização do roteamento standalone em `app.route.ts` e `main.ts`
+- Pasta `core` para serviços e `pages` para componentes de página
+- Configuração de preloading de rotas em `main.ts`
 
 ### Changed
 
-- `.gitignore` atualizado para ignorar totalmente `.vscode/`
+- `AppComponent` atualizado para usar `IonicModule` + `RouterModule`
+- Refatoração da estrutura de pastas para melhor organização
+
+## [0.1.0] - 2025-06-17
+
+### Added
+
+- Estrutura inicial do projeto Ionic-Angular
+- Arquivos base: `.gitignore`, `CHANGELOG.md`, `README.md`
+- Configuração inicial do ambiente de desenvolvimento
+
+### Changed
+
+- Atualizado `.gitignore` para excluir totalmente a pasta `.vscode/`
 
 ### Removed
 
-- Remoção da identificação da pasta .vscode/ tanto do reposítorio local como no GitHub
+- Pasta `.vscode` removida do repositório local e remoto
 
-## [0.1] -2025-06-17
-
-- Estrutura inicial do projeto.
-- Arquivos .gitignore, CHANGELOG.md & README.md
