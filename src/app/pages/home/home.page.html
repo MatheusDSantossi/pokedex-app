@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Pokédex
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <!-- Itera sobre o array que vem do service -->
+     <ion-item
+      button
+      *ngFor="let p of pokemons"
+      [routerLink]="['/detail', p.name]"
+     >
+      <ion-thumbnail slot="start">
+        <!-- Imagem do Pokémon -->
+         <img [src]="
+         'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' +
+         (p.url.split('/')[-2] || extractId(p.url))+'.png'
+         "
+         alt="{{ p.name }}" />
+      </ion-thumbnail>
+      <ion-label>
+        {{ p.name | titlecase }}
+      </ion-label>
+     </ion-item>
+  </ion-list>
+
+  <!-- Rodapé com paginação -->
+   <ion-footer>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button
+        [disabled]="!previous"
+        (click)="loadPage(previous)"
+        >
+        <- Anterior
+        </ion-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-button
+        [disabled]="!next"
+        (click)="loadPage(next)"
+        >
+        Próxima ->
+      </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+   </ion-footer>
+</ion-content>

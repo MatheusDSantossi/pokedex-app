@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" />
+    </ion-buttons>
+    <ion-title>{{ pokemon?.name | titlecase }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div *ngIf="pokemon; else loading" class="ion-padding">
+    <ion-img [src]="pokemon.sprites.other['official-artwork'].front_default" />
+
+    <ion-list>
+      <ion-item>
+        <ion-label>Altura</ion-label>
+        <ion-note slot="end">{{ pokemon.height }}</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>Peso:</ion-label>
+        <ion-note slot="end">{{ pokemon.weight }}</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-item *ngFor="let t of pokemon.types">
+          <ion-label>Tipo:</ion-label>
+          <ion-note slot="end">{{ t.type.name}}</ion-note>
+        </ion-item>
+        <!-- Adicionando mais 3 itens para completar as 6 descrições -->
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <ng-template #loading>
+    <ion-spinner name="crescent"></ion-spinner>
+  </ng-template>
+</ion-content>
