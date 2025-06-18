@@ -3,7 +3,8 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/" />
     </ion-buttons>
-    <ion-title>{{ pokemon?.name | titlecase }}</ion-title>
+    <ion-title class="title-text-animation">{{ pokemon?.name | titlecase }}</ion-title>
+    <app-theme-toggle class="theme-icon" slot="end"></app-theme-toggle>
   </ion-toolbar>
 </ion-header>
 
@@ -13,17 +14,17 @@
 
     <ion-list>
       <ion-item>
-        <ion-label>Altura</ion-label>
-        <ion-note slot="end">{{ pokemon.height }}</ion-note>
+        <ion-label class="font-size-2vw-and-bold">Altura:</ion-label>
+        <ion-note class="detail-info" slot="end">{{ pokemon.height }}</ion-note>
       </ion-item>
       <ion-item>
-        <ion-label>Peso:</ion-label>
-        <ion-note slot="end">{{ pokemon.weight }}</ion-note>
+        <ion-label class="font-size-2vw-and-bold">Peso:</ion-label>
+        <ion-note class="detail-info" slot="end">{{ pokemon.weight }}</ion-note>
       </ion-item>
       <ion-item>
         <ion-item *ngFor="let t of pokemon.types">
-          <ion-label>Tipo:</ion-label>
-          <ion-note slot="end">{{ t.type.name}}</ion-note>
+          <ion-label class="font-size-2vw-and-bold">Tipo:</ion-label>
+          <ion-note class="detail-info" slot="end">{{ t.type.name}}</ion-note>
         </ion-item>
         <!-- Adicionando mais 3 itens para completar as 6 descrições -->
       </ion-item>

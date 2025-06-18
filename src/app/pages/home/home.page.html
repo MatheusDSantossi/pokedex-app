@@ -1,11 +1,9 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title class="home-page-title">
+    <ion-title class="title-text-animation">
       Pokédex
     </ion-title>
-    <ion-icon class="theme-icon" size="large" [name]="isDarkMode ? 'sunny' : 'moon'" slot="end" (click)="toggleDarkModeHandler()">
-      {{ isDarkMode? 'Light Mode': 'Dark Mode' }}
-    </ion-icon>
+    <app-theme-toggle class="theme-icon" slot="end"></app-theme-toggle>
   </ion-toolbar>
 </ion-header>
 
@@ -39,7 +37,7 @@
         [disabled]="!previous"
         (click)="loadPage(previous)"
         >
-        <- Anterior
+        <ion-icon name="arrow-back"></ion-icon>
         </ion-button>
       </ion-buttons>
       <ion-buttons slot="end">
@@ -47,7 +45,7 @@
         [disabled]="!next"
         (click)="loadPage(next)"
         >
-        Próxima ->
+        <ion-icon name="arrow-forward"></ion-icon>
       </ion-button>
       </ion-buttons>
     </ion-toolbar>

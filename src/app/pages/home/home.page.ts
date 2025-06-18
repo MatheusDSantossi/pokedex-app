@@ -7,13 +7,15 @@ import {
   PokemonListItem,
 } from '../../core/services/pokemon.service';
 import { addIcons } from 'ionicons';
-import { sunny, moon } from 'ionicons/icons'
+import { sunny, moon, arrowForward, arrowBack } from 'ionicons/icons';
+import { ThemeToggleComponent } from 'src/app/shared/theme-toggle.componet';
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, RouterModule],
+  imports: [IonicModule, CommonModule, RouterModule, ThemeToggleComponent],
 })
 export class HomePage implements OnInit {
   pokemons: PokemonListItem[] = [];
@@ -32,7 +34,7 @@ export class HomePage implements OnInit {
     this.isDarkMode = !this.isDarkMode;
     const elem = document.documentElement;
     elem.classList.toggle('dark', this.isDarkMode);
-  }
+  };
 
   extractId(url: string): string {
     const parts = url.split('/');
@@ -54,6 +56,6 @@ export class HomePage implements OnInit {
       this.previous = res.previous;
     });
 
-    addIcons({ sunny, moon })
+    addIcons({ sunny, moon, arrowForward, arrowBack });
   }
 }

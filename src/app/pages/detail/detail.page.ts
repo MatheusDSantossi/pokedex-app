@@ -4,6 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, ActivatedRoute } from '@angular/router';
 import { PokemonService } from 'src/app/core/services/pokemon.service';
 import { IonicModule } from '@ionic/angular';
+import { addIcons } from 'ionicons';
+import { sunny, moon } from 'ionicons/icons';
+import { ThemeToggleComponent } from 'src/app/shared/theme-toggle.componet';
 
 @Component({
   selector: 'app-detail',
@@ -15,6 +18,7 @@ import { IonicModule } from '@ionic/angular';
     CommonModule,
     FormsModule,
     RouterModule,
+    ThemeToggleComponent
   ],
 })
 export class DetailPage implements OnInit {

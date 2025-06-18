@@ -4,34 +4,47 @@
   --ion-text-color: #000!important;
 }
 
+.font-size-2vw-and-bold {
+  font-weight: bold;
+  font-size: 2vw!important;
+}
+
 .dark {
-  --ion-text-color: #0ff!important;
+  --ion-text-color: rgb(246, 255, 0)!important;
   --ion-background-color: #322f2f!important;
 }
 
-.home-page-title {
+.title-text-animation {
   place-self: center;
   background: linear-gradient(90deg, #000, rgb(1, 97, 97), #000) -100% / 200%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  font: 900 clamp(2em, 5vw, 10em) exo, sans-serif;
+  font: 900 clamp(2em, 3vw, 10em) exo, sans-serif;
   animation: shimmer 2s linear infinite;
 }
 
-.dark .home-page-title {
+.dark .title-text-animation {
   place-self: center;
   background: linear-gradient(90deg, #00f, #0ff, #00f) -100% / 200%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  font: 900 clamp(2em, 5vw, 10em) exo, sans-serif;
+  font: 900 clamp(2em, 3vw, 10em) exo, sans-serif;
   animation: shimmer 2s linear infinite;
 }
 
 .theme-icon {
+  animation: shimmer 2s linear infinite;
+  transition: background 0.3s ease-in-out
+  color 0.3s ease-in-out;
   margin-right: 5rem!important;
   cursor: pointer;
+}
+
+.dark .theme-icon {
+  --ion-text-color: #fff!important;
+  fill: #000!important;
 }
 
 @keyframes shimmer { to {
@@ -41,6 +54,14 @@
 .home-page-title:hover {
   font-variation-settings: "wght" 100 "ital" 0;
   text-shadow: none
+}
+
+.detail-info {
+  font-size: 2vw;
+  --color: black!important;
+}
+.dark .detail-info {
+  --color: white!important;
 }
 
 /* Core CSS required for Ionic components to work properly */
