@@ -3,9 +3,9 @@
     <ion-title class="home-page-title">
       Pokédex
     </ion-title>
-    <ion-button slot="end" (click)="toggleDarkModeHandler()">
+    <ion-icon class="theme-icon" size="large" [name]="isDarkMode ? 'sunny' : 'moon'" slot="end" (click)="toggleDarkModeHandler()">
       {{ isDarkMode? 'Light Mode': 'Dark Mode' }}
-    </ion-button>
+    </ion-icon>
   </ion-toolbar>
 </ion-header>
 

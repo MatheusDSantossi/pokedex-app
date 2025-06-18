@@ -29,6 +29,11 @@
   animation: shimmer 2s linear infinite;
 }
 
+.theme-icon {
+  margin-right: 5rem!important;
+  cursor: pointer;
+}
+
 @keyframes shimmer { to {
   background-position: 100%;
 }}

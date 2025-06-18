@@ -6,7 +6,8 @@ import {
   PokemonService,
   PokemonListItem,
 } from '../../core/services/pokemon.service';
-
+import { addIcons } from 'ionicons';
+import { sunny, moon } from 'ionicons/icons'
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -52,5 +53,7 @@ export class HomePage implements OnInit {
       this.next = res.next;
       this.previous = res.previous;
     });
+
+    addIcons({ sunny, moon })
   }
 }
