@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.0] - 2025-06-18
+
+### Added
+
+- Toggle de tema dark/light na HomePage com ícone dinâmico (sun/moon)
+- Gradiente de título (`.home-page-title`) que muda conforme o tema
+- Importação de `dark.class.css` em `global.sccc` para dark mode via classe
+
 ## [0.2.0] - 2025-06-17
 
 ### Added
