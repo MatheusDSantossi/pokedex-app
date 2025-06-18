@@ -18,11 +18,19 @@ export class HomePage implements OnInit {
   pokemons: PokemonListItem[] = [];
   next: string | null = null;
   previous: string | null = null;
+  // Estado local do tema
+  isDarkMode: boolean = false;
 
   constructor(private pokemonService: PokemonService) {}
 
   ngOnInit(): void {
     this.loadPage();
+  }
+
+  toggleDarkModeHandler = () => {
+    this.isDarkMode = !this.isDarkMode;
+    const elem = document.documentElement;
+    elem.classList.toggle('dark', this.isDarkMode);
   }
 
   extractId(url: string): string {

@@ -1,8 +1,11 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
+    <ion-title class="home-page-title">
       Pokédex
     </ion-title>
+    <ion-button slot="end" (click)="toggleDarkModeHandler()">
+      {{ isDarkMode? 'Light Mode': 'Dark Mode' }}
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 
