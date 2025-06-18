@@ -10,8 +10,9 @@
 
 <ion-content [fullscreen]="true">
   <div *ngIf="pokemon; else loading" class="ion-padding">
-    <ion-img [src]="pokemon.sprites.other['official-artwork'].front_default" />
-
+    <div class="image-container">
+      <ion-img class="ion-img" [src]="pokemon.sprites. other['official-artwork'].front_default" />
+    </div>
     <ion-list>
       <ion-item>
         <ion-label class="font-size-2vw-and-bold">Altura:</ion-label>
