@@ -27,6 +27,21 @@
         <ion-label class="font-size-2vw-and-bold">Peso:</ion-label>
         <ion-note class="detail-info" slot="end">{{ pokemon.weight }}</ion-note>
       </ion-item>
+
+      <ion-item>
+        <ion-item *ngFor="let a of pokemon.abilities">
+          <ion-label class="font-size-2vw-and-bold">Habilidade:</ion-label>
+          <ion-note class="detail-info" slot="end">{{ a.ability.name}}</ion-note>
+        </ion-item>
+      </ion-item>
+
+      <ion-item>
+        <ion-item *ngFor="let f of pokemon.forms">
+          <ion-label class="font-size-2vw-and-bold">Forma:</ion-label>
+          <ion-note class="detail-info" slot="end">{{ f.name}}</ion-note>
+        </ion-item>
+      </ion-item>
+
       <ion-item>
         <ion-item *ngFor="let t of pokemon.types">
           <ion-label class="font-size-2vw-and-bold">Tipo:</ion-label>

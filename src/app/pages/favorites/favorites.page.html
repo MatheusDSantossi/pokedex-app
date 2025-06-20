@@ -5,9 +5,21 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <ion-list>
+    <ion-item *ngFor="let p of pagedPokemons">
+      <app-pokemon-card [pokemon]="p"></app-pokemon-card>
+    </ion-item>
+  </ion-list>
+
+  <ion-footer *nfIf="totalPages > 1">
     <ion-toolbar>
-      <ion-title size="large">favorites</ion-title>
+      <ion-buttons slot="start">
+        <ion-button (click)="prev()" [disabled]="page === 1">Anterior</ion-button>
+      </ion-buttons>
+      <ion-title>Página {{ page }} / {{ totalPages }}</ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="next()" [disabled]="page === totalPages">Próximo</ion-button>
+      </ion-buttons>
     </ion-toolbar>
-  </ion-header>
+  </ion-footer>
 </ion-content>

@@ -39,6 +39,7 @@ export class DetailPage implements OnInit {
     this.pokemonService.getPokemon(name).subscribe(data => {
       this.pokemon = data;
       this.isFav = this.favService.isFavorite(name);
+      console.log("Pokemon detal: ", data);
     });
 
     addIcons({ heart, heartOutline })
