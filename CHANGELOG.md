@@ -7,6 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.0] - 2025-06-20
+
+### Added
+
+- Sincronização de favoritos ao entrar na HomePage (`ViewWillEnter`).
+- Filtro por “All” / “Favorites” via `ion-segment` e getter `displayedPokemons`.
+- Botão de favorito na DetailPage e HomePage atualiza imediatamente o estado.
+
+### Changed
+
+- Botões “Anterior”/“Próxima” desativam ou ocultam conforme segmento e offset.
+
+### Style
+
+- Ícones de coração (`.heart-icon`) agora usam `color: red !important` para traço vermelho.
+- Segmentos com cores diferentes (`.dark ion-segment-button`) ganhou `--color-checked: yellow;--color: white!important;` para cores mais destacadas.
+
 ## [0.5.0] - 2025-06-19
 
 ### Added
