@@ -9,6 +9,11 @@
   font-size: 2vw!important;
 }
 
+.dark ion-segment-button {
+  --color-checked: yellow;
+  --color: white!important;
+}
+
 // Container styling
 .image-container {
   display: flex;
@@ -27,6 +32,11 @@
 .dark {
   --ion-text-color: rgb(246, 255, 0)!important;
   --ion-background-color: #322f2f!important;
+}
+
+.heart-icon {
+  color: red!important;
+  cursor: pointer;
 }
 
 .title-text-animation {
