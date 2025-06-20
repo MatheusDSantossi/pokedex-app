@@ -26,6 +26,11 @@
       <ion-label>
         {{ p.name | titlecase }}
       </ion-label>
+
+      <!-- Ícone de favorito -->
+       <ion-icon slot="end" [name]="favSet.has(p.name) ? 'heart' : 'heart-outline'">
+
+       </ion-icon>
      </ion-item>
   </ion-list>
 

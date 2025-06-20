@@ -7,8 +7,9 @@ import {
   PokemonListItem,
 } from '../../core/services/pokemon.service';
 import { addIcons } from 'ionicons';
-import { sunny, moon, arrowForward, arrowBack } from 'ionicons/icons';
+import { sunny, moon, arrowForward, arrowBack, heart, heartOutline } from 'ionicons/icons';
 import { ThemeToggleComponent } from 'src/app/shared/theme-toggle.componet';
+import { FavoritesService } from 'src/app/core/services/favorites.service';
 
 @Component({
   selector: 'app-home',
@@ -24,10 +25,21 @@ export class HomePage implements OnInit {
   // Estado local do tema
   isDarkMode: boolean = false;
 
-  constructor(private pokemonService: PokemonService) {}
+  favSet = new Set<string>();
 
-  ngOnInit(): void {
+  constructor(
+    private pokemonService: PokemonService,
+    private favService: FavoritesService
+  ) {}
+
+  ngOnInit() {
+    this.loadFavorites();
     this.loadPage();
+  }
+
+  private loadFavorites() {
+    const favs = this.favService.getAll();
+    this.favSet = new Set(favs);
   }
 
   toggleDarkModeHandler = () => {
@@ -47,15 +59,17 @@ export class HomePage implements OnInit {
       : new URL(`${this.pokemonService['API']}/pokemon?offset=0&limit=20`)
           .searchParams;
 
-    const offset = params.get('offset') ?? '0';
+    const offset = params.get('offse  t') ?? '0';
     const limit = params.get('limit') ?? '20';
 
     this.pokemonService.listPokemons(+offset, +limit).subscribe((res) => {
       this.pokemons = res.results;
       this.next = res.next;
       this.previous = res.previous;
+      this.loadFavorites(); // atualiza corações depois da listagem
     });
 
-    addIcons({ sunny, moon, arrowForward, arrowBack });
+
+    addIcons({ sunny, moon, arrowForward, arrowBack, heart, heartOutline });
   }
 }
