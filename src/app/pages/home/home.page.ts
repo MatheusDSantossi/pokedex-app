@@ -26,6 +26,7 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [IonicModule, CommonModule, RouterModule, FormsModule, ThemeToggleComponent],
 })
+
 export class HomePage implements OnInit, ViewWillEnter {
   pokemons: PokemonListItem[] = [];
   next: string | null = null;
