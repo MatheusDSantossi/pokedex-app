@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.7.0] - 2025-06-20
+
+### Added
+
+- Refinamentos na FavoritesPage e DetailPage (ajuste de ícones, markup e sincronização de estado).
+- Novo filtro “Favorites” no ion-segment com layout melhorado.
+
+### Changed
+
+- Refatorada lógica de paginação na HomePage para suportar offset corretamente.
+- HomePage agora filtra corretamente entre “All” e “Favorites” sem precisar de reload.
+
+### Style
+
+- Melhora suave das coores destacadas em dark mode.
+
 ## [0.6.0] - 2025-06-20
 
 ### Added
