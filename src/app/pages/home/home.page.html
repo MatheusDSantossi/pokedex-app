@@ -5,6 +5,14 @@
     </ion-title>
     <app-theme-toggle class="theme-icon" slot="end"></app-theme-toggle>
   </ion-toolbar>
+
+  <!-- Segmento para filtrar -->
+   <ion-toolbar>
+    <ion-segment [(ngModel)]="segment" (ionChange)="segmentChanged()">
+      <ion-segment-button value="all">Todos</ion-segment-button>
+      <ion-segment-button value="favorites">Favoritos</ion-segment-button>
+    </ion-segment>
+   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
@@ -12,7 +20,7 @@
     <!-- Itera sobre o array que vem do service -->
      <ion-item
       button
-      *ngFor="let p of pokemons"
+      *ngFor="let p of displayedPokemons"
       [routerLink]="['/detail', p.name]"
      >
       <ion-thumbnail slot="start">
@@ -28,14 +36,14 @@
       </ion-label>
 
       <!-- Ícone de favorito -->
-       <ion-icon slot="end" [name]="favSet.has(p.name) ? 'heart' : 'heart-outline'">
+       <ion-icon class="heart-icon" slot="end" [name]="favSet.has(p.name) ? 'heart' : 'heart-outline'">
 
        </ion-icon>
      </ion-item>
   </ion-list>
 
   <!-- Rodapé com paginação -->
-   <ion-footer>
+   <ion-footer *ngIf="segment === 'all'">
     <ion-toolbar>
       <ion-buttons slot="start">
         <ion-button

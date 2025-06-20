@@ -5,11 +5,6 @@
     </ion-buttons>
     <ion-title class="title-text-animation">{{ pokemon?.name | titlecase }}</ion-title>
 
-    <!-- botão favorito -->
-     <ion-button slot="end" (click)="toggleFavorite()">
-      <ion-icon [name]="isFav ? 'heart' : 'heart-outline'"></ion-icon>
-     </ion-button>
-
     <!-- toggle de tema -->
     <app-theme-toggle class="theme-icon" slot="end"></app-theme-toggle>
   </ion-toolbar>
@@ -17,6 +12,9 @@
 
 <ion-content [fullscreen]="true">
   <div *ngIf="pokemon; else loading" class="ion-padding">
+
+    <!-- botão favorito -->
+    <ion-icon (click)="toggleFavorite()" class="heart-icon" slot="end" size="large" [name]="isFav ? 'heart' : 'heart-outline'"></ion-icon>
     <div class="image-container">
       <ion-img class="ion-img" [src]="pokemon.sprites. other['official-artwork'].front_default" />
     </div>
