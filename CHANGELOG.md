@@ -7,7 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.5.0] - 2025-06-19
+
+### Added
+
+- Estrutura da nova funcionalidade de adicionar favoritos.
+- Serviço `.favorites;service.ts` com as principais funções.
+- Customização das pages Home e Detail agora com a opção de favoritar.
+
 ## [0.4.0] - 2025-06-18
+
+### Added
 
 - Tema dark/light disponível no DetailPage e HomePage via `ThemeToggleComponent`.
 - Animação de transição no gradiente do título (`.title-text-animation` antes o nome da classe era `.home-page-title`).
