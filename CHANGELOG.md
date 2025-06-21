@@ -7,6 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- DetailPage agora carrega múltiplos sprites (front, back, official artwork) para eventual carrossel.
+
+### Changed
+
+- Refatorado o `PokemonService` para expor mais campos das sprites.
+- Ajustes no `detail.page.html` e `.ts` para renderização de imagens e carrosel de imagens.
+
+### Style
+
+- Refinamento de variáveis de tema em `global.scss` (gradientes, cores de texto e background).
+- Ajustes nos ícones de navegação de tema em `main.ts` e no `ThemeToggleComponent`.
+
+### Chore
+
+- Atualização de dependências em `package.json` e lockfile.
+- Configuração de providers e bootstrap em `main.ts` via `provideHttpClient`, `provideRouter` e `provideAnimations`.
+
 ## [0.7.0] - 2025-06-20
 
 ### Added
@@ -21,7 +40,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Style
 
-- Melhora suave das coores destacadas em dark mode.
+- Melhora suavidade das cores destacadas em dark mode.
 
 ## [0.6.0] - 2025-06-20
 
