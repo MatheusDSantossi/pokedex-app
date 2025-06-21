@@ -1,15 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, ActivatedRoute } from '@angular/router';
 import { PokemonService } from 'src/app/core/services/pokemon.service';
 import { IonicModule } from '@ionic/angular';
 import { ThemeToggleComponent } from 'src/app/shared/theme-toggle.componet';
-import { lastValueFrom } from 'rxjs';
 
 import { addIcons } from 'ionicons';
-import { heart, heartOutline } from 'ionicons/icons';
+import { heart, heartOutline, arrowBackCircleOutline, arrowForwardCircleOutline } from 'ionicons/icons';
 import { FavoritesService } from 'src/app/core/services/favorites.service';
+
+import { RouterLink } from '@angular/router';
+
+import {
+  CarouselComponent,
+  CarouselControlComponent,
+  CarouselInnerComponent,
+  CarouselItemComponent
+} from '@coreui/angular'
 
 @Component({
   selector: 'app-detail',
@@ -21,11 +29,20 @@ import { FavoritesService } from 'src/app/core/services/favorites.service';
     CommonModule,
     FormsModule,
     RouterModule,
-    ThemeToggleComponent
+    ThemeToggleComponent,
+    CarouselComponent,
+    CarouselInnerComponent,
+    CarouselItemComponent,
+    CarouselControlComponent,
+    RouterLink
   ],
 })
 export class DetailPage implements OnInit {
+  slides: { src: string }[] = [];
+
   pokemon: any;
+  images : string[] = [];
+
   isFav = false;
 
   constructor(
@@ -40,9 +57,19 @@ export class DetailPage implements OnInit {
       this.pokemon = data;
       this.isFav = this.favService.isFavorite(name);
       console.log("Pokemon detal: ", data);
+
+      // Monta o array de URL's a partir dos sprites
+      this.images = [
+        data.sprites.front_default,
+        data.sprites.back_default,
+        data.sprites.other['official-artwork'].front_default
+      ].filter(url => !!url); // remove possíveis undefined
+
+      // Slides para o carousel
+      this.slides = this.images.map(src => ({ src }));
     });
 
-    addIcons({ heart, heartOutline })
+    addIcons({ heart, heartOutline, arrowBackCircleOutline, arrowForwardCircleOutline })
   }
 
   toggleFavorite() {

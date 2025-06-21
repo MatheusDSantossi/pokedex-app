@@ -11,7 +11,7 @@ interface PokeListResponse {
 
 interface PokemonSprites {
   front_default: string;
-  back_defaul: string;
+  back_default: string;
   other: {
     'official-artwork': { front_default: string };
     dream_world: { front_default: string };

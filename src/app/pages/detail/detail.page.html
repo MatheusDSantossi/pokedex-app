@@ -13,11 +13,25 @@
 <ion-content [fullscreen]="true">
   <div *ngIf="pokemon; else loading" class="ion-padding">
 
-    <!-- botão favorito -->
+    <!-- Botão favorito -->
     <ion-icon (click)="toggleFavorite()" class="heart-icon" slot="end" size="large" [name]="isFav ? 'heart' : 'heart-outline'"></ion-icon>
-    <div class="image-container">
-      <ion-img class="ion-img" [src]="pokemon.sprites. other['official-artwork'].front_default" />
-    </div>
+
+    <!-- Carrosel de imagens -->
+    <c-carousel [interval]="0">
+      <c-carousel-inner class="image-container">
+        <c-carousel-item *ngFor="let slide of slides; let i = index" [class.active]="i === 0">
+          <ion-img [src]="slide.src"
+          alt="{{ pokemon?.name }}"
+          class="img-container"
+          loading="lazy"
+          />
+        </c-carousel-item>
+      </c-carousel-inner>
+      <c-carousel-control [routerLink] caption="Previous" direction="prev" />
+      <c-carousel-control [routerLink] caption="Next" direction="next" />
+    </c-carousel>
+
+    <!-- Detalhes do pokemon -->
     <ion-list>
       <ion-item>
         <ion-label class="font-size-2vw-and-bold">Altura:</ion-label>
