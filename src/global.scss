@@ -14,7 +14,42 @@
   --color: white!important;
 }
 
-// Container styling
+// Carroseul styling
+c-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  // overflow: hidden;
+}
+
+c-carousel-item img {
+  display: block;
+  margin: 0 auto;
+  max-height: 300px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+c-carousel-control[direction="prev"],
+c-carousel-control[direction="next"] {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+}
+
+c-carousel-control[direction="prev"] {
+  right: 27rem;
+}
+
+c-carousel-control[direction="next"] {
+  left: 27rem;
+}
+
 .image-container {
   display: flex;
   justify-content: center;
@@ -24,7 +59,7 @@
 
 // Simplify image styling
 .image-container .ion-img {
-  max-width: 350px;
+  width: 100px!important;
   max-height: 100%;
   object-fit: contain;
 }

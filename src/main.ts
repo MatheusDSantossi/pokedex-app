@@ -6,8 +6,7 @@ import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
 
-import { IonicStorageModule } from '@ionic/storage-angular';
-import { importProvidersFrom } from '@angular/core';
+import { provideAnimations} from '@angular/platform-browser/animations';
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -18,11 +17,7 @@ bootstrapApplication(AppComponent, {
     provideIonicAngular(),
     provideRouter(routes, withPreloading(PreloadAllModules)),
 
-    // importProvidersFrom(
-    //   IonicStorageModule.forRoot({
-    //     name: 'pokedex_db',
-    //     driverOrder: ['indexddb', 'localstorage']
-    //   })
-    // )
+    provideAnimations(),
+
   ],
 }) .catch(err => console.error(err));
