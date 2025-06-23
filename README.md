@@ -61,3 +61,5 @@ graph LR
 5. **Persistência**: Sistema de favoritos usando LocalStorage
 
 ## 🖼️ Demonstração
+
+[Apresentação do pojeto](https://www.loom.com/share/722ed29617a946429aa83edda3d01dab?sid=1e487369-80aa-4eff-aec8-35d5fcd675af)
