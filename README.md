@@ -58,6 +58,6 @@ graph LR
 2. **Design System**: Criação de componente `<app-pokemon-card>` reutilizável
 3. **Tratamento de erros**: Fallback UI para falhas na API
 4. **Animaciones**: Transições suaves entre telas com Ionic Animations
-5. **Persistência**: Sistema de favoritos usando IndexedDB como fallback
+5. **Persistência**: Sistema de favoritos usando LocalStorage
 
 ## 🖼️ Demonstração
