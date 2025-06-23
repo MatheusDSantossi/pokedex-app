@@ -23,6 +23,12 @@ Aplicativo de Pokedex desenvolvido com **Ionic + Angular** como solução ao des
 
 ## 🎨 Diferenciais Implementados
 
+- 🖼️ **Carrossel de Imagens**: Multiplos sprites na tela de detalhes
+- 🌓 **Tema Dinâmico**: Dark/light mode
+- ❤️ **Favoritos Offline**: Funcionalidade sem dependência de backend
+- 🧪 **Testes Multi-navegador**: Chrome + Brave em pipeline CI
+- ♻️ **Padrão Reativo**: Estado global com RxJS Services
+
 ## 📦 Como Executar
 
 ```bash
@@ -34,6 +40,16 @@ ionic serve
 
 # Executar testes
 ng test
+```
+
+## Tecnologias chaves
+
+```mermaid
+graph LR
+    A[Ionic 7] --> B[Angular 16]
+    A --> C[Capacitor]
+    B --> D[RxJS 7]
+    B --> E[Standalone Components]
 ```
 
 ## 🎯 Decisões Técnicas
