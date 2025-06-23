@@ -7,6 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.9.0] - 2025-06-20
+
+### Added
+
+- Testes unitários para `PokemonService` (listPokemons, getPokemon) usando `provideHttpClientTesting`.
+- Testes unitários para `FavoritesService` (toggleFavorite, isFavorite, getAll) usando `localStorage`.
+- Componentes de teste para `HomePage` e `DetailPage`, com `PokemonService` e `ActivatedRoute`.
+- Configuração do arquivo Karma para usar Puppeteer's Chromium (`process.env.CHROME_BIN = puppeteer.executablePath()`).
+- Scripts NPM: `test:ci`, `test:chrome`, `test:brave`.
+
+### Changed
+
+- `app.component.ts` atualizado para utilizar `provideAnimations()` para oferecer suporte as aniações.
+- `karma.conf.js` atualizado para registrar os `customLaunchers.BraveHeadless` e o padrão do `ChromeHeadless` via Puppeteer.
+
+## [0.7.0] - 2025-06-21
+
 ### Added
 
 - DetailPage agora carrega múltiplos sprites (front, back, official artwork) para eventual carrossel.

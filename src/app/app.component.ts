@@ -8,7 +8,8 @@ import { IonicModule } from '@ionic/angular';
   templateUrl: 'app.component.html',
   standalone: true,
   imports: [IonicModule, RouterModule],
-  template: `<ion-app><ion-router-outlet></ion-router-outlet></ion-router-outlet>`
+  template: `<ion-app>
+  <ion-router-outlet></ion-router-outlet></ion-app>`
 })
 export class AppComponent {
   constructor() {}
